@@ -63,9 +63,9 @@ export default function DepartureBoardLetter({ LETTERS = " ABCDEFGHIJKLMNOPQRSTU
             setFallingTextStyle({...fallingTextStyle, top: 0})	;
         }, DROP_TIME);
         
-        console.log("index.current === stopAt.current", index.current === stopAt.current ? "OUI" : "NON", index.current, stopAt.current)
+        //console.log("index.current === stopAt.current", index.current === stopAt.current ? "OUI" : "NON", index.current, stopAt.current)
         if (index.current === stopAt.current) {
-            console.log("bouh")
+            //console.log("bouh")
             clearInterval(interval.current);
             interval.current = -1;
         }

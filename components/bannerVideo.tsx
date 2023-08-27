@@ -1,8 +1,10 @@
+"use client";
 import { useEffect, useRef } from 'react';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.min.css';
 import '@videojs/themes/dist/city/index.css';
 import styles from './../styles/bannerVideo.module.scss';
+import Player from 'video.js/dist/types/player';
 
 interface BannerVideoProps {
     options: any;
@@ -11,7 +13,7 @@ interface BannerVideoProps {
 export default function BannerVideo({ options }: BannerVideoProps) {
 
     const videoRef = useRef(null);
-    const playerRef = useRef(null);
+    const playerRef = useRef<Player>(null);
 
     useEffect(() => {
         const player = playerRef.current;

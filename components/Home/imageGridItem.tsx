@@ -9,7 +9,7 @@ type ImageGridItemProps = {
     legend1: string,
     legend2: string,
     roundImage: boolean,
-    description: ReactElement,
+    description: ReactElement | string,
 };
 
 export default function ImageGridItem({ link, imageSrc, imageAlt, legend1, legend2, roundImage, description }: ImageGridItemProps) {

@@ -1,3 +1,4 @@
+import { Album } from "types/Album.type";
 import { Artist } from "../types/Artist.type";
 import { Survey } from "../types/Survey.type";
 import { SurveyType } from "../utils/constants";
@@ -11,15 +12,24 @@ export const theArtist: Artist = {
     legend2: "中森明菜",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nullam malesuada turpis tortor, non varius tellus dapibus vel.Vivamus finibus lacinia tortor, a volutpat felis luctus sit amet. "
         + "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    artistNameRm: "Akina Nakamori",
+    artistNameJp: "中森明菜"
 };
 
-export const theAlbum = {
+export const theAlbum: Album = {
     imgSrc: "Omega Tribe - Aqua City.jpg",
     imgAlt: "Omega Tribe's Aqua City Album cover",
     legend1: "Omega Tribe",
     legend2: "Aqua City",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Nullam malesuada turpis tortor, non varius tellus dapibus vel.Vivamus finibus lacinia tortor, a volutpat felis luctus sit amet. "
         + "Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    id: 1,
+    artistName: "Omega Tribe",
+    titleRm: "Aqua City",
+    titleJp: "Aqua City",
+    releaseDate: "1983-09-21",
+    isLiked: false,
+    type: "album"
 };
 
 export const theSurvey: Survey = {

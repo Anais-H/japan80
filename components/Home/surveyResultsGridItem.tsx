@@ -1,5 +1,5 @@
 import styles from '../../styles/surveyGridItem.module.scss';
-import { Survey, SurveyOption } from '../../types/Survey.type';
+import { Survey } from '../../types/Survey.type';
 import { SurveyType } from '../../utils/constants';
 import { getTotalNumberOfVotes } from '../../utils/survey.utils';
 import LinkButton from '../buttons/linkButton';
@@ -13,7 +13,7 @@ type SurveyResultsGridItemProps = {
 export default function SurveyResultsGridItem({ survey }: SurveyResultsGridItemProps) {
 
     // mise en forme des options
-    let surveyOptionsResults = [];
+    let surveyOptionsResults: JSX.Element[] = [];
     const totalNumberOfVotes = getTotalNumberOfVotes(survey);
     if (survey.type === SurveyType.SINGLE_CHOICE) {
         for (let i = 0; i < survey.options.length; i++) {

@@ -1,43 +1,39 @@
-import { useSession, signIn, signOut } from "next-auth/react";
 import styles from '../styles/navbar.module.scss';
 import Home from '@mui/icons-material/Home';
 import LiveTv from '@mui/icons-material/LiveTv';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import Search from '@mui/icons-material/Search';
 import PollIcon from '@mui/icons-material/Poll';
-import LogoutIcon from '@mui/icons-material/Logout';
 import Link from 'next/link';
 import Tooltip from '@mui/material/Tooltip';
 import Zoom from '@mui/material/Zoom';
+import { getServerSession } from 'next-auth';
+import { authOptions } from 'lib/auth';
+import LoginButton from './buttons/LoginButton';
+import LogoutButton from './buttons/LogoutButton';
 
-export default function Navbar() {
+export default async function Navbar() {
 
-    const { data: session } = useSession();
+    const session = await getServerSession(authOptions);
 
     return (
         <>
             <div className={styles.topNavbar}>
-                {session ?
+                {session?.user ?
                     <>
                         <div>
                             <Link href={"/user/" + session.user.name}>
-                                <AccountCircle />
+                                <AccountCircle /> <span>{session.user.name}</span>
                             </Link>
                         </div>
 
                         <div>
-                            <Link href="/">
-                                <LogoutIcon  onClick={() => signOut()}/>
-                            </Link>
+                            <LogoutButton />
                         </div>
                     </>
                     :
                     <>
-                        <div>
-
-                            <a onClick={() => signIn()}><span>Log in</span></a>
-
-                        </div>
+                        <div><LoginButton/></div>
 
                         <div>
                             <Link href="/join">Join</Link>

@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 import { dislike as dislikeAlbum, like as likeAlbum } from '../../services/album.service';
 import { like as likeArtist, dislike as dislikeArtist } from '../../services/Artist.service';

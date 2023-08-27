@@ -1,23 +1,30 @@
-import styles from "../styles/search/search.module.scss";
+"use client";
+import styles from "@/styles/search/search.module.scss";
 import Pagination from "@mui/material/Pagination";
-import SearchForm from "../components/search/searchForm";
+import SearchForm from "@/components/search/searchForm";
 import { useEffect, useState } from "react";
-import { getArtists } from "../services/Artist.service";
+import { getArtists } from "services/Artist.service";
 import Link from "next/link";
+import { Artist } from "types/Artist.type";
 
-export default function Search({nbPages}) {
+function getNbPages() {
+    return 10;
+}
+
+export default function Search() {
     const [fetchUrl, setFetchUrl] = useState("path/to/data");
-    const [searchResults, setSearchResults] = useState([]);
+    const [searchResults, setSearchResults] = useState<Artist[]>([]);
+    const nbPages = getNbPages();
 
     useEffect(() => {
         setSearchResults(getArtists(10, 1));
     }, [fetchUrl]);
 
     function renderResults() {
-        let res = [];
+        let res: JSX.Element[] = [];
         searchResults.forEach(r => {
             res.push(<div className="tal-center">
-                <Link href={"/artists/" + r.slug}><img className={"clickable " + "img-round"} src={"/assets/artists/" + r.imgSrc} alt={r.imgAlt} /></Link>
+                <Link href={"/groups/" + r.slug}><img className={"clickable " + "img-round"} src={"/assets/artists/" + r.imgSrc} alt={r.imgAlt} /></Link>
                 <div>{r.artistNameRm}</div>
                 <div>{r.artistNameJp}</div>
             </div>);
@@ -43,14 +50,5 @@ export default function Search({nbPages}) {
                     <Pagination count={nbPages} size="medium" />
                 </div>
         </section>
-    )
-}
-
-export async function getServerSideProps(context) {
-    const nbPages = 10;
-    return {
-        props: {
-            nbPages,
-        }, // will be passed to the page component as props
-    }
+    );
 }

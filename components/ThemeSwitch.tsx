@@ -1,3 +1,4 @@
+"use client";
 import { useTheme } from 'next-themes';
 import IconButton from '@mui/material/IconButton';
 import Brightness4Icon from '@mui/icons-material/Brightness4';

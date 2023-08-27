@@ -1,3 +1,5 @@
+"use client";
+
 import styles from '../../styles/surveyGridItem.module.scss';
 import { Survey } from '../../types/Survey.type';
 import { SurveyType } from '../../utils/constants';
@@ -12,7 +14,7 @@ type SurveyGridItemProps = {
 export default function SurveyGridItem({ survey }: SurveyGridItemProps) {
 
     // mise en forme des options
-    let surveyOptions = [];
+    let surveyOptions: JSX.Element[] = [];
     if (survey.type === SurveyType.SINGLE_CHOICE) {
         for (let i = 0; i < survey.options.length; i++) {
             surveyOptions.push(
@@ -22,7 +24,6 @@ export default function SurveyGridItem({ survey }: SurveyGridItemProps) {
                 </label>
             );
         }
-
     }
 
     return (
@@ -50,5 +51,5 @@ export default function SurveyGridItem({ survey }: SurveyGridItemProps) {
                 <LinkButton text='Suggest one' link='/surveys' />
             </div>
         </div>
-    )
+    );
 }

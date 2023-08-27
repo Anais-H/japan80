@@ -5,5 +5,7 @@ export type Artist = {
     imgAlt: string,
     artistNameRm: string,
     artistNameJp: string,
-    description: any
+    description: any,
+    legend1: string,
+    legend2: string
 }

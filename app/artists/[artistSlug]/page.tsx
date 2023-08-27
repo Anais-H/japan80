@@ -1,16 +1,39 @@
 import DOMPurify from "isomorphic-dompurify";
-import BannerVideo from '../../components/bannerVideo';
-import styles from '../../styles/artist.module.scss';
+import BannerVideo from '../../../components/bannerVideo';
+import styles from '@/styles/artist.module.scss';
 import MusicNote from '@mui/icons-material/MusicNote';
-import { getArticleByArtist } from '../../services/Article.service';
-import AlbumItem from "../../components/items/albumItem";
-import { Paths } from "../../utils/constants";
+import { getArticleByArtist } from '../../../services/Article.service';
+import AlbumItem from "../../../components/items/albumItem";
+import { Paths } from "../../../utils/constants";
 import Image from "next/image";
-import LikeButton from "../../components/buttons/likeButton";
-import { getAge } from "../../utils/utils";
+import LikeButton from "../../../components/buttons/likeButton";
+import { getAge } from "../../../utils/utils";
+import { getArtistsSlugs } from "../../../services/Artist.service";
+import { redirect } from "next/navigation";
 
 
-export default function Artist({ data }) {
+// Return a list of `params` to populate the [slug] dynamic segment
+export async function generateStaticParams() {
+    const artists = getArtistsSlugs();
+   
+    return artists.map((slug) => ({
+      slug: slug,
+    }));
+}
+
+async function getArtistData(artistSlug: string) {
+    const data = await getArticleByArtist(artistSlug);
+    return data;
+}
+
+
+export default async function Page({ params }: { params: { artistSlug: string }}) {
+    const data = await getArtistData(params.artistSlug);
+
+    if (!data) {
+        console.log("TODO: 404 Artist not found" + params.artistSlug)
+        redirect("/");  // should not happen it means the artist slug does not exist
+    }
 
     const bannerVideoOptions = {
         controls: true,
@@ -62,7 +85,7 @@ export default function Artist({ data }) {
                         <div dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data.artistDescription2) }}></div>
                     </div>
 
-                    <div className={styles.image2Container}><Image className={styles.content2Image} src={Paths.ARTIST_FOLDER + data.artistLongImage} alt={data.artistNameRm} layout="fill" /></div>
+                    <div className={styles.image2Container}><Image className={styles.content2Image} src={Paths.ARTIST_FOLDER + data.artistLongImage} alt={data.artistNameRm} fill/></div>
 
                 </div>
 
@@ -139,16 +162,4 @@ export default function Artist({ data }) {
         </>
 
     );
-}
-
-export async function getServerSideProps(context) {
-    const { artist } = context.query;
-    const data = await getArticleByArtist(artist);
-
-    console.log("getServerSideProps Artist");
-    return {
-        props: {
-            data
-        }, // will be passed to the page component as props
-    }
 }

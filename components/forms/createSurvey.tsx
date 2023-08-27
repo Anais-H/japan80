@@ -1,9 +1,9 @@
+"use client";
 import { useState } from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import styles from '../../styles/button/likeButton.module.scss';
 import { SurveyType } from '../../utils/constants';
 
 
@@ -12,7 +12,7 @@ export default function CreateSurvey() {
     const [surveyType, setSurveyType] = useState(SurveyType.SINGLE_CHOICE);
 
     const handleSurveyTypeChange = (event: SelectChangeEvent) => {
-        console.log('handle', event.target.value);
+        //console.log('handle', event.target.value);
         setSurveyType(event.target.value);
     }
 

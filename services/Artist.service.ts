@@ -5,6 +5,10 @@ export const getArtists = (limit: number, page: number) => {
     return [akinaNakamori, anzenChitai];
 }
 
+export const getArtistsSlugs = () => {
+    return [akinaNakamori.slug, anzenChitai.slug];
+}
+
 export const getHighlightArtist = () => {
     return theArtist;
 }

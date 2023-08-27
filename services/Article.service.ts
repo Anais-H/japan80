@@ -3,7 +3,11 @@ import { akinaNakamoriArticle, anzenChitaiArticle } from "../mockData/article.mo
 export const getArticleByArtist = async (artistId: string) => {
     if (artistId === 'akina_nakamori') {
         return akinaNakamoriArticle;
-    } else if (artistId === 'anzen_chitai') {
+    }
+}
+
+export const getArticleByGroup = async (groupId: string) => {
+    if (groupId === 'anzen_chitai') {
         return anzenChitaiArticle;
     }
 }
