@@ -1,0 +1,32 @@
+@import './variables.module.scss';
+
+
+.flashNewsCard {
+  min-width: 40%;
+  width: 40%;
+  background-color: $ltt-flash-news-color;
+  padding: 1rem;
+  border-radius: 10px;
+
+  [data-theme='dark'] & {
+    background-color: $flash-news-color;
+  }
+
+  &+.flashNewsCard {
+    margin-left: 1rem;
+  }
+
+  .top {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .main {
+    margin: .5rem 0;
+  }
+
+  .bottom {
+    text-align: right;
+    font-size: small;
+  }
+}

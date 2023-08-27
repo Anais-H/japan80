@@ -1,0 +1,43 @@
+@import './variables.module.scss';
+
+.imageCard {
+    border-radius: 20px;
+    box-shadow: 4px 6px 10px $ltt-light;
+    background-color: $white-color;
+    padding-bottom: 4px;
+
+    img {
+        width: 300px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .topContent {
+        font-weight: bold;
+        padding: 16px 0;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+
+        div {
+            padding: 0 4px;
+        }
+
+        .likeIcon {
+            padding: 0 8px;
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        font-size: $font-sm;
+        margin-right: 16px;
+        color: $ltt-font-color-4;
+    }
+}

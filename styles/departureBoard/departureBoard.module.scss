@@ -1,0 +1,18 @@
+
+/*
+	Based upon Jakub Hampl's "Designing a departures board with CSS3".
+	http://gampleman.eu/post/1488470623/designing-a-departures-board-with-css3
+*/
+
+.departureBoard {
+    padding:  0.36em;
+    display: inline-block;
+	line-height: 1.3em;
+    background: rgb(30, 30, 30);
+    -webkit-border-radius: 0.21em;
+    -moz-border-radius: 0.21em;
+    border-radius: 0.21em;
+    color: #eee;
+	font-family: Helvetica;
+}
+

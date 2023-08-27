@@ -1,0 +1,35 @@
+@import './variables.module.scss';
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.rankingItem {
+    display: flex;
+
+    img {
+        object-fit: cover;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: normal;
+    }
+}

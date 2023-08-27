@@ -1,0 +1,41 @@
+@import './variables.module.scss';
+
+.container {
+    width: 100%;
+    padding: 20px 0;
+    font-size: $font-lg;
+    overflow: hidden;
+    background-color: $primary-color;
+    color: $white-color;
+    font-family: 'VT323';
+
+    &:hover div {
+        animation-play-state: paused;
+    }
+
+    div {
+        width: 100%;
+        position: relative;
+        animation: marquee 18s linear infinite;
+        white-space: nowrap;
+    }
+
+    .info+.info {
+        margin-left: 80px;
+    }
+
+    .item+.item:before {
+        content: ', ';
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+}

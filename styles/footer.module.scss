@@ -1,0 +1,25 @@
+@import './variables.module.scss';
+@import './_mixins.scss';
+
+.container {
+    padding: 2rem 2rem 2rem 6.5rem;
+    background-color: $white-color;
+    color: $ltt-primary-color;
+
+    [data-theme='dark'] & {
+        background-color: $bg-dark;
+        color: $light-font;
+    }
+}
+
+@include xl-screen() {
+    .content {
+        margin: auto;
+        width: 80%;
+    }
+}
+
+.flexContainer {
+    display: flex;
+    justify-content: space-between;
+}

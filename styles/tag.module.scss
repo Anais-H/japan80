@@ -1,0 +1,42 @@
+@import 'variables.module.scss';
+
+.tag {
+    background-color: $ltt-primary-color;
+    border-radius: 25px;
+    width: max-content;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    color: $white-color;
+    cursor: pointer;
+
+
+    [data-theme='dark'] & {
+        background-color: $primary-color;
+    }
+
+    img {
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        object-fit: cover;
+    }
+
+    .content {
+        margin: 0 16px;
+        font-style: normal;
+        word-break: normal;
+        overflow-wrap: normal;
+    }
+
+    &.sm {
+        img {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .content {
+            margin: 0 8px;
+        }
+    }
+}

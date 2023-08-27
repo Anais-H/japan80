@@ -1,0 +1,114 @@
+@import './variables.module.scss';
+
+
+.bannerVideoSection {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $white-color;
+}
+
+.artistNameRm {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    font-size: 6rem;
+    margin-left: 10vw;
+    translate: 0 70%;
+    position: relative;
+    z-index: 10;
+}
+
+.likesText {
+    font-size: 1rem;
+}
+
+.artistNameJp {
+    font-size: 6rem;
+    text-align: center;
+    translate: 0 -50%;
+}
+
+.firstInformations {
+    text-align: right;
+}
+
+.content1 {
+    display: flex;
+    flex-direction: row;
+    margin: 0 100px;
+
+    .content1Image {
+        margin: auto;
+        z-index: 1;
+        position: relative;
+        min-width: 30vw;
+        min-height: 30vw;
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .description1Container {
+        padding: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        line-height: 2rem;
+        text-align: justify;
+    }
+}
+
+.content2 {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    margin: 0 200px;
+    position: relative;
+
+    .description2Container {
+        line-height: 2rem;
+        text-align: justify;
+    }
+
+    .image2Container {
+        position: relative;
+        width: 100%;
+
+        > div {
+            position: unset !important;
+        }
+        
+        .content2Image {
+            object-fit: contain;
+            width: 100% !important;
+            position: relative !important;
+            height: unset !important;
+        }
+    }
+
+
+}
+
+
+.marginBottom {
+    margin-bottom: 1rem;
+}
+
+.responsiveVideo {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.responsiveVideo iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}

@@ -1,0 +1,80 @@
+@import './variables.module.scss';
+
+.navbar {
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1rem;
+    z-index: 90;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+}
+
+.navItem {
+    background-color: $ltt-primary-color;
+    padding: .5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    overflow: hidden;
+    transition: width .5s;
+
+    [data-theme='dark'] & {
+        background-color: $primary-color;
+    }
+
+    &.externalLink {
+        background-color: $alternative-color;
+    }
+
+    a {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+
+    span {
+        margin: 0 1rem;
+    }
+}
+
+.navItem:hover,
+.navItem.active {
+
+    a {
+        color: $active-link-color;
+    }
+}
+
+.topNavbar {
+    position: fixed;
+    right: 0;
+    padding: 16px 32px;
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    background-color: $ltt-primary-color;
+
+    [data-theme='dark'] & {
+        background-color: $primary-color;
+    }
+
+    border-radius: 0 0 0 20px;
+    z-index: 1;
+
+    a {
+        font-variant: small-caps;
+        font-weight: bold;
+    }
+}

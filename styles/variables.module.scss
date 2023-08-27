@@ -1,0 +1,65 @@
+/*********** Colors *********/
+
+$dark-color: #0b0e1e;
+$primary-color: #132255;
+$ltt-primary-color: #1e344f;
+$ltt-light-primary-color: #c2e0f3;
+
+$ltt-light: rgb(178, 199, 239);
+
+$alternative-color: #e27e95;
+
+// font colors
+$font-color-4: rgb(178, 199, 239);
+$ltt-font-color-4: #516986;
+
+/****** Text ******/
+
+$white-color: white;
+$active-link-color: #57fdc6;
+$link-color: white;
+$link-color-alt: $alternative-color;
+
+$light-font: white;
+$dark-font: $dark-color;
+
+/***** Background ******/
+
+$bg-dark: $dark-color;
+$bg-light: white;
+$ltt-bg-light: #f0f5fa;
+
+
+/********** Home Grid Items **********/
+
+$highlight-item-color: rgba(5, 52, 136, 0.8); //rgba(57, 114, 217, 0.8); // rgba(17, 22, 31, 0.712);
+$ltt-highlight-item-color: rgba(163, 195, 253, 0.8);
+
+$survey-item-color: rgba(189, 16, 110, 0.8); // rgba(219, 54, 143, 0.8); // rgba(44, 20, 33, 0.719);
+$ltt-survey-item-color: rgba(150, 209, 232, 0.8);
+
+$liveTV-item-color: rgba(0, 119, 113, 0.8); // rgba(59, 234, 225, 0.8); // rgba(20, 39, 38, 0.733);
+$ltt-liveTV-item-color: rgba(142, 221, 217, 0.8);
+
+
+/********* Flash news **********/
+
+$flash-news-color: #16275b;
+$ltt-flash-news-color: $ltt-light-primary-color;
+
+
+/*********** Mesures ***********/
+
+$font-sm: .7rem;
+$font-lg: 1.3rem;
+
+$sm: 5px;
+$md: 10px;
+$lg: 20px;
+$xl: 40px;
+
+
+/*********** Images ************/
+
+$dark-home-bg: url('/assets/takashi-miyazaki.jpg');
+$light-home-bg: url('/assets/francesco-ungaro-csffh1umD-I-unsplash.jpg'); //../public/assets/ashley-satanosky-mWN686Fsbgs-unsplash.jpg');

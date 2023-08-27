@@ -1,0 +1,11 @@
+@import './variables.module.scss';
+
+.container {
+    height: 100vh;
+    background-color: $ltt-primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+}

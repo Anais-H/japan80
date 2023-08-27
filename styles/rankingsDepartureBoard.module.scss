@@ -1,0 +1,31 @@
+@import './variables.module.scss';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e1e;
+
+    .containerTitle {
+        display: block;
+        align-self: flex-start;
+    }
+}
+
+
+.boardButtonsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+
+    .active {
+        color: #fff;
+        text-shadow:
+            0 0 3px #fff,
+            0 0 5px #fff,
+            0 0 9px rgb(0, 217, 255),
+            0 0 15px rgb(0, 217, 255);
+    }
+}

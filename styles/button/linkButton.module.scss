@@ -1,0 +1,11 @@
+@import '../variables.module.scss';
+
+.link {
+    position: relative;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+    font-variant: small-caps;
+    border-bottom: solid 2px;
+    width: fit-content;
+}

@@ -1,0 +1,41 @@
+@import './variables.module.scss';
+
+
+.main {
+    min-height: 100vh;
+}
+
+
+.logo {
+    font-family: 'Bungee Shade';
+    position: fixed;
+    font-size: larger;
+    margin: 16px 0 0 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .space {
+        height: 8px;
+    }
+}
+
+.themeSwitch {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 50%;
+    background-color: $primary-color;
+    color: white;
+
+    [data-theme='dark'] & {
+        background-color: white;
+        color: black;
+    }
+
+    button {
+        margin-left: 0;
+    }
+}

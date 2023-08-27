@@ -1,0 +1,9 @@
+@import '../variables.module.scss';
+
+.formBtn {
+    padding: 8px;
+    font-size: $font-lg;
+    font-weight: bold;
+    color: $white-color;
+    font-variant: all-small-caps;
+}

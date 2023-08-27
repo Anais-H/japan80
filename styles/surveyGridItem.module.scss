@@ -1,0 +1,86 @@
+@import 'variables.module.scss';
+
+.title {
+    margin-bottom: 16px;
+}
+
+.suggestedBy {
+    font-size: $font-sm;
+    margin-top: 4px;
+    margin-bottom: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+
+    span {
+        font-style: italic;
+    }
+}
+
+.formComment {
+    margin-top: 8px;
+    font-size: $font-sm;
+    font-style: italic;
+}
+
+.formBottomContainer {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin: 8px 0;
+}
+
+.surveyOption {
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    color: $ltt-primary-color;
+
+    input[type="radio"] {
+        appearance: none;
+        background-color: #fff;
+        margin: 0;
+        font: inherit;
+        color: $ltt-primary-color;
+        width: 1.15em;
+        height: 1.15em;
+        border: 0.15em solid currentColor;
+        border-radius: 50%;
+        display: grid;
+        place-content: center;
+
+        &::before {
+            content: "";
+            width: 0.65em;
+            height: 0.65em;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em var(currentColor);
+            background-color: currentColor;
+        }
+
+        &:checked::before {
+            transform: scale(1);
+        }
+
+        &:focus {
+            outline: max(2px, 0.15em) solid currentColor;
+        }
+    }
+
+    &+& {
+        margin-top: 8px;
+    }
+}
+
+
+/******* ResultSurvey ********/
+
+.optionsList {
+    li+li {
+        margin-top: 8px;
+    }
+}

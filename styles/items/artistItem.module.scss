@@ -1,0 +1,29 @@
+.avatar {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        transform: scale(105%);
+    }
+}
+
+.relativeContainer {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+}
+
+.item {
+    text-align: center;
+    font-weight: 500;
+    word-break: keep-all;
+}
+
+.likedIcon {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

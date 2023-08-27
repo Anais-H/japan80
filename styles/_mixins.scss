@@ -1,0 +1,17 @@
+@mixin m-screen() {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin l-screen() {
+  @media (min-width: 1008px) {
+    @content;
+  }
+}
+
+@mixin xl-screen() {
+  @media (min-width: 1240px) {
+    @content;
+  }
+}
