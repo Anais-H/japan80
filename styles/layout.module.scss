@@ -7,6 +7,8 @@
 
 
 .logo {
+    color: $logo-color;
+    z-index: 1;
     font-family: 'Bungee Shade';
     position: fixed;
     font-size: larger;
